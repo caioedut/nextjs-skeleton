@@ -1,20 +1,31 @@
-import { ThemeOptionalProps } from '@react-bulk/core';
+import { ThemeEditProps } from '@react-bulk/core';
 
-const dark: ThemeOptionalProps = {
+const dark: ThemeEditProps = {
   mode: 'dark',
 
   colors: {
-    primary: '#2962ff',
-    secondary: '#aa00ff',
-  } as any,
+    primary: '#3E64FF',
+    secondary: '#FFA249',
+
+    background: {
+      primary: '#212B4E',
+      secondary: '#182039',
+    },
+  },
 
   components: {
+    Button: {
+      defaultProps: {
+        borderRadius: '1rem',
+      },
+    },
     Card: {
       defaultProps: {
-        corners: 3,
+        borderRadius: '1rem',
+        padding: '1.5rem',
       },
-    } as any,
-  } as any,
+    },
+  },
 };
 
 export default dark;

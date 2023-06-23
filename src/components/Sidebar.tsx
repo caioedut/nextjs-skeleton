@@ -1,14 +1,10 @@
-import { Box, Button, Text } from '@react-bulk/web';
-import { signOut } from 'next-auth/react';
+import { Button, Text } from '@react-bulk/web';
 
 export default function Sidebar() {
   return (
     <>
-      <Text variant="title">Sidebar</Text>
-
-      <Button mt="auto" onPress={signOut}>
-        Logout
-      </Button>
+      <Text variant="subtitle">Sidebar</Text>
+      <Button mt="auto">Logout</Button>
     </>
   );
 }

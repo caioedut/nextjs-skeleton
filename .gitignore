@@ -44,6 +44,7 @@ next-env.d.ts
 .next/
 .vercel
 out/
+web-build/
 
 # other
 eas.json

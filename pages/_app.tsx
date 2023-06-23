@@ -2,43 +2,24 @@ import '../styles/globals.css';
 import type { AppProps } from 'next/app';
 import ReactBulk from '@react-bulk/core';
 import dark from '../src/themes/dark';
-import { SessionProvider, useSession } from 'next-auth/react';
-import { useRouter } from 'next/router';
-import { Loading } from '@react-bulk/web';
-import Layout from '../src/components/Layout';
+import { Box, Scrollable } from '@react-bulk/web';
+import Sidebar from '../src/components/Sidebar';
 
 export default function App({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   return (
     <ReactBulk theme={dark}>
-      <SessionProvider session={session}>
-        {
-          // @ts-ignore
-          Component.noAuth ? (
+      <Box row noWrap h="100%" w="100%">
+        <Box h="100%" w={280}>
+          <Scrollable bg="background.primary" contentInset={6}>
+            <Sidebar />
+          </Scrollable>
+        </Box>
+        <Box flex h="100%">
+          <Scrollable bg="background.secondary" contentInset={6}>
             <Component {...pageProps} />
-          ) : (
-            <Auth>
-              <Layout>
-                <Component {...pageProps} />
-              </Layout>
-            </Auth>
-          )
-        }
-      </SessionProvider>
+          </Scrollable>
+        </Box>
+      </Box>
     </ReactBulk>
   );
-}
-
-function Auth({ children }: any) {
-  const router = useRouter();
-  const { status } = useSession();
-
-  if (status === 'unauthenticated') {
-    router.push('/login');
-  }
-
-  if (status === 'authenticated') {
-    return children;
-  }
-
-  return <Loading h="100vh" />;
 }
