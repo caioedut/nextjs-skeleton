@@ -1,5 +1,6 @@
-import './config';
 import run from './run';
+
+import './config';
 
 const commands = [
   // Run sequence

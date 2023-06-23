@@ -1,4 +1,4 @@
 import { config } from 'dotenv';
 
-config({ path: '.env', override: true });
-config({ path: '.env.local', override: true });
+config({ override: true, path: '.env' });
+config({ override: true, path: '.env.local' });

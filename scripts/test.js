@@ -1,10 +1,11 @@
-import './config';
 import run from './run';
+
+import './config';
 
 const commands = [
   // Run sequence
-  `prettier --check "{src,test}/**/*.{js,jsx,ts,tsx}"`,
-  `next lint`,
+  `prettier "{scripts,src,test}/**/*.{js,jsx,ts,tsx}" --check`,
+  `eslint "{scripts,src,test}/**/*.{js,jsx,ts,tsx}"`,
   `tsc --noEmit`,
 ];
 

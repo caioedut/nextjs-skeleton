@@ -1,4 +1,4 @@
-import { execSync, ExecSyncOptions } from 'child_process';
+import { ExecSyncOptions, execSync } from 'child_process';
 
 export const isYarn = `${process?.env?.npm_execpath || ''}`.toLowerCase().includes('yarn');
 
