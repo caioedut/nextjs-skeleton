@@ -1,5 +1,6 @@
 import { config } from 'dotenv';
-import run, { isYarn } from './run';
+
+import run from './run';
 
 config();
 

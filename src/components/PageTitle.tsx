@@ -1,15 +1,18 @@
-import Icon from './Icon';
 import { SquaresFour } from '@phosphor-icons/react';
-import { Box, Text } from '@react-bulk/web';
+
 import Head from 'next/head';
+
 import { BoxProps } from '@react-bulk/core';
+import { Box, Text } from '@react-bulk/web';
+
+import Icon from './Icon';
 
 export type PageTitleProps = {
   title: string;
   icon?: any;
 } & BoxProps;
 
-export default function PageTitle({ title, icon, rest }: PageTitleProps) {
+export default function PageTitle({ title, icon, ...rest }: PageTitleProps) {
   return (
     <>
       <Head>

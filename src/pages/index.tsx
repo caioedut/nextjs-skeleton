@@ -1,7 +1,10 @@
-import { Box, Card, Divider, Grid, Progress, Text } from '@react-bulk/web';
-import { SquaresFour } from '@phosphor-icons/react';
-import PageTitle from '../src/components/PageTitle';
 import { Fragment } from 'react';
+
+import { SquaresFour } from '@phosphor-icons/react';
+
+import { Box, Card, Divider, Grid, Progress, Text } from '@react-bulk/web';
+
+import PageTitle from '../components/PageTitle';
 
 export default function Home() {
   const team = [

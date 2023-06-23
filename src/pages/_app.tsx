@@ -1,9 +1,11 @@
-import '../styles/globals.css';
 import type { AppProps } from 'next/app';
-import ReactBulk from '@react-bulk/core';
-import dark from '../src/themes/dark';
-import { Box, Scrollable } from '@react-bulk/web';
-import Sidebar from '../src/components/Sidebar';
+
+import ReactBulk, { Box, Scrollable } from '@react-bulk/web';
+
+import '../../styles/globals.css';
+
+import Sidebar from '../components/Sidebar';
+import dark from '../themes/dark';
 
 export default function App({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   return (
