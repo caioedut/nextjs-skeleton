@@ -1,16 +1,18 @@
 import type { AppProps } from 'next/app';
 
-import ReactBulk, { Box, Scrollable } from '@react-bulk/web';
+import React from 'react';
 
-import '../../styles/globals.css';
+import ReactBulk, { Box, Scrollable } from '@react-bulk/web';
 
 import Sidebar from '../components/Sidebar';
 import dark from '../themes/dark';
 
+import '../../styles/globals.css';
+
 export default function App({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   return (
     <ReactBulk theme={dark}>
-      <Box row noWrap h="100%" w="100%">
+      <Box noWrap row h="100%" w="100%">
         <Box h="100%" w={280}>
           <Scrollable bg="background.primary" contentInset={6}>
             <Sidebar />

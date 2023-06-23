@@ -1,15 +1,18 @@
 import { ThemeEditProps } from '@react-bulk/core';
 
 const dark: ThemeEditProps = {
-  mode: 'dark',
-
   colors: {
-    primary: '#3E64FF',
-    secondary: '#FFA249',
-
     background: {
       primary: '#212B4E',
       secondary: '#182039',
+    },
+
+    primary: {
+      main: '#3E64FF',
+    },
+
+    secondary: {
+      main: '#FFA249',
     },
   },
 
@@ -26,6 +29,8 @@ const dark: ThemeEditProps = {
       },
     },
   },
+
+  mode: 'dark',
 };
 
 export default dark;

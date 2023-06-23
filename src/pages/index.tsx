@@ -1,46 +1,45 @@
 import { Fragment } from 'react';
 
 import { SquaresFour } from '@phosphor-icons/react';
-
 import { Box, Card, Divider, Grid, Progress, Text } from '@react-bulk/web';
 
 import PageTitle from '../components/PageTitle';
 
 export default function Home() {
   const team = [
-    { name: 'Richard Ward', role: 'Front-end developer', color: 'primary' },
-    { name: 'Wagner August', role: 'Back-end developer', color: 'secondary' },
-    { name: 'Oliver Smith', role: 'DBA / Data Science', color: 'error' },
+    { name: 'Richard Ward', color: 'primary', role: 'Front-end developer' },
+    { name: 'Wagner August', color: 'secondary', role: 'Back-end developer' },
+    { name: 'Oliver Smith', color: 'error', role: 'DBA / Data Science' },
   ];
 
   return (
     <>
-      <PageTitle title="Dashboard" icon={SquaresFour} />
+      <PageTitle icon={SquaresFour} title="Dashboard" />
 
       <Grid gap={6}>
-        <Box xs={12} md={4}>
+        <Box md={4} xs={12}>
           <Card flex>
             <Text bold>Weekly Report</Text>
-            <Text variant="caption" color="text.secondary" mt={1}>
+            <Text color="text.secondary" mt={1} variant="caption">
               Check out your weekly report
             </Text>
 
             <Box my="auto">
-              <Text variant="secondary" mt={3}>
+              <Text mt={3} variant="secondary">
                 Deposit
               </Text>
               <Text bold color="success" mt={1}>
                 $ 624.99
               </Text>
 
-              <Text variant="secondary" mt={3}>
+              <Text mt={3} variant="secondary">
                 Widthdraw
               </Text>
               <Text bold color="error" mt={1}>
                 $ 232.91
               </Text>
 
-              <Text variant="secondary" mt={3}>
+              <Text mt={3} variant="secondary">
                 Balance
               </Text>
               <Text bold color="info" mt={1}>
@@ -50,24 +49,24 @@ export default function Home() {
           </Card>
         </Box>
 
-        <Box xs={12} md={5}>
+        <Box md={5} xs={12}>
           <Card flex>
             <Text bold>Team</Text>
-            <Text variant="caption" color="text.secondary" mt={1}>
+            <Text color="text.secondary" mt={1} variant="caption">
               Look for your co-workers
             </Text>
 
             {team.map((member, index) => (
               <Fragment key={index}>
-                {index > 0 && <Divider mt={3} mr={-6} />}
+                {index > 0 && <Divider mr={-6} mt={3} />}
 
-                <Box row noWrap center mt={3}>
-                  <Box w="3rem" h="3rem" borderRadius="1.5rem" bg={member.color} center>
+                <Box center noWrap row mt={3}>
+                  <Box center bg={member.color} borderRadius="1.5rem" h="3rem" w="3rem">
                     <Text variant="subtitle">{member.name.replace(/[^A-Z]/g, '')}</Text>
                   </Box>
                   <Box flex ml={3}>
                     <Text bold>{member.name}</Text>
-                    <Text variant="secondary" color="text.secondary">
+                    <Text color="text.secondary" variant="secondary">
                       {member.role}
                     </Text>
                   </Box>
@@ -77,10 +76,10 @@ export default function Home() {
           </Card>
         </Box>
 
-        <Box xs={12} md={3}>
+        <Box md={3} xs={12}>
           <Card flex>
             <Text bold>In Progress</Text>
-            <Text variant="caption" color="text.secondary" mt={1}>
+            <Text color="text.secondary" mt={1} variant="caption">
               Almost completed tasks
             </Text>
 
@@ -89,11 +88,11 @@ export default function Home() {
 
               return (
                 <Fragment key={index}>
-                  <Text variant="secondary" mt={4}>
+                  <Text mt={4} variant="secondary">
                     Task {index + 1}
                   </Text>
 
-                  <Progress size="small" value={percent} mt={1} />
+                  <Progress mt={1} size="small" value={percent} />
                 </Fragment>
               );
             })}
@@ -102,11 +101,11 @@ export default function Home() {
       </Grid>
 
       <Card flex bg="primary" mt={6}>
-        <Text variant="subtitle" bold>
+        <Text bold variant="subtitle">
           Subscriptions Chart
         </Text>
 
-        <Box row noWrap alignItems="end" justifyContent="evenly" h="100%" minh={240} py={3}>
+        <Box noWrap row alignItems="end" h="100%" justifyContent="evenly" minh={240} py={3}>
           {Array.from({ length: 12 }).map((_, index) => {
             const percent = Math.round(Math.random() * (100 - 20) + 20);
 
@@ -119,14 +118,14 @@ export default function Home() {
                 <Text center>{percent}</Text>
                 <Box
                   flex
-                  w={32}
                   my={1}
                   style={{
+                    '&:hover': { bg: 'white' },
                     bg: 'common.white.50',
                     borderRadius: '0.5rem 0.5rem 0 0',
                     transition: 'all ease .3s',
-                    '&:hover': { bg: 'white' },
                   }}
+                  w={32}
                 />
                 <Text center>{month}</Text>
               </Box>

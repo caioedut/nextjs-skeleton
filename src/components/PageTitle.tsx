@@ -1,15 +1,13 @@
 import { SquaresFour } from '@phosphor-icons/react';
-
-import Head from 'next/head';
-
 import { BoxProps } from '@react-bulk/core';
 import { Box, Text } from '@react-bulk/web';
+import Head from 'next/head';
 
 import Icon from './Icon';
 
 export type PageTitleProps = {
-  title: string;
   icon?: any;
+  title: string;
 } & BoxProps;
 
 export default function PageTitle({ title, icon, ...rest }: PageTitleProps) {
@@ -19,13 +17,13 @@ export default function PageTitle({ title, icon, ...rest }: PageTitleProps) {
         <title>{title}</title>
       </Head>
 
-      <Box row noWrap center mb={6} {...rest}>
+      <Box center noWrap row mb={6} {...rest}>
         {Boolean(icon) && (
           <Box mr={3}>
-            <Icon icon={SquaresFour} color="white" size="2rem" />
+            <Icon color="white" icon={SquaresFour} size="2rem" />
           </Box>
         )}
-        <Text variant="subtitle" flex>
+        <Text flex variant="subtitle">
           {title}
         </Text>
       </Box>
