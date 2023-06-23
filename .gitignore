@@ -1,10 +1,5 @@
 # env
-env.json
-*.env
 .env.local
-.env.development.local
-.env.test.local
-.env.production.local
 
 # ide
 .idea/
@@ -21,10 +16,6 @@ node_modules/
 # testing
 coverage/
 
-# production
-build/
-dist/
-
 # misc
 .DS_Store
 
@@ -40,12 +31,7 @@ yarn-error.log*
 next-env.d.ts
 
 # temp
-.expo/
 .next/
 .vercel
 out/
 web-build/
-
-# other
-eas.json
-google-services.json

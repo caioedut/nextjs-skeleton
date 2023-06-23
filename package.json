@@ -9,7 +9,7 @@
     "dev": "tsx scripts/dev",
     "test": "tsx scripts/test",
     "build": "tsx scripts/build",
-    "start": "next start"
+    "start": "tsx scripts/start"
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.0.10",

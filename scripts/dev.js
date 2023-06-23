@@ -1,8 +1,5 @@
-import { config } from 'dotenv';
-
+import './config';
 import run, { isYarn } from './run';
-
-config();
 
 const commands = [
   // Run sequence
