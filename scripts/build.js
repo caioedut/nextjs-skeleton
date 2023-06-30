@@ -1,16 +1,13 @@
-import { config } from 'dotenv';
+import pmex from 'pmex';
 
-import run, { isYarn } from './run';
+import './config';
 
-config();
+pmex({
+  npm: `install && npm prune`,
+  pnpm: `install --fix-lockfile`,
+  yarn: `install --check-files`,
+});
 
-const commands = [
-  // Run sequence
-  isYarn ? 'yarn install --check-files' : 'npm prune',
-  isYarn ? 'yarn test' : 'npm run test',
-  `next build`,
-];
+pmex(`test`);
 
-for (const cmd of commands) {
-  run(cmd);
-}
+pmex(`next build`);

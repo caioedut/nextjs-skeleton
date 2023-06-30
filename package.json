@@ -6,10 +6,10 @@
     "node": ">=18.0.0"
   },
   "scripts": {
-    "dev": "tsx scripts/dev",
-    "test": "tsx scripts/test",
-    "build": "tsx scripts/build",
-    "start": "tsx scripts/start"
+    "dev": "tsx scripts/dev.js",
+    "test": "tsx scripts/test.js",
+    "build": "tsx scripts/build.js",
+    "start": "tsx scripts/start.js"
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.0.10",
@@ -18,7 +18,7 @@
     "next": "^13.4.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "typescript": "^5.1.0"
+    "typescript": "^4.9.5"
   },
   "devDependencies": {
     "@types/node": "^18.16.18",
@@ -29,8 +29,8 @@
     "eslint-config-next": "^13.4.7",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-perfectionist": "^1.4.0",
+    "pmex": "^0.0.26",
     "prettier": "^2.8.8",
-    "tsx": "^3.12.7",
-    "yarpm": "^1.2.0"
+    "tsx": "^3.12.7"
   }
 }
