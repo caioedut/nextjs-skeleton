@@ -5,9 +5,6 @@
 .idea/
 .vscode/
 
-# packs
-.eslintcache
-
 # dependencies
 node_modules/
 .pnp/
@@ -15,9 +12,6 @@ node_modules/
 
 # testing
 coverage/
-
-# misc
-.DS_Store
 
 # npm
 yarn.lock
@@ -31,7 +25,12 @@ yarn-error.log*
 next-env.d.ts
 
 # temp
+.eslintcache
+.expo/
 .next/
 .vercel
+.DS_Store
+build/
+dist/
 out/
 web-build/
