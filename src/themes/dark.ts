@@ -25,7 +25,6 @@ const dark: ThemeEditProps = {
     Card: {
       defaultProps: {
         borderRadius: '1rem',
-        padding: '1.5rem',
       },
     },
   },

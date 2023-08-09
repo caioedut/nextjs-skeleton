@@ -1,9 +1,8 @@
 import { Fragment } from 'react';
 
-import { SquaresFour } from '@phosphor-icons/react';
 import { Box, Card, Divider, Grid, Progress, Text } from '@react-bulk/web';
 
-import PageTitle from '../components/PageTitle';
+import Head from '@/components/Head';
 
 export default function Home() {
   const team = [
@@ -14,9 +13,9 @@ export default function Home() {
 
   return (
     <>
-      <PageTitle icon={SquaresFour} title="Dashboard" />
+      <Head title="Dashboard" />
 
-      <Grid gap={6}>
+      <Grid gap>
         <Box md={4} xs={12}>
           <Card flex>
             <Text bold>Weekly Report</Text>
@@ -25,21 +24,21 @@ export default function Home() {
             </Text>
 
             <Box my="auto">
-              <Text mt={3} variant="secondary">
+              <Text mt={4} variant="secondary">
                 Deposit
               </Text>
               <Text bold color="success" mt={1}>
                 $ 624.99
               </Text>
 
-              <Text mt={3} variant="secondary">
+              <Text mt={4} variant="secondary">
                 Widthdraw
               </Text>
               <Text bold color="error" mt={1}>
                 $ 232.91
               </Text>
 
-              <Text mt={3} variant="secondary">
+              <Text mt={4} variant="secondary">
                 Balance
               </Text>
               <Text bold color="info" mt={1}>
@@ -58,13 +57,13 @@ export default function Home() {
 
             {team.map((member, index) => (
               <Fragment key={index}>
-                {index > 0 && <Divider mr={-6} mt={3} />}
+                {index > 0 && <Divider mr={-4} mt={4} />}
 
-                <Box center noWrap row mt={3}>
+                <Box center noWrap row mt={4}>
                   <Box center bg={member.color} borderRadius="1.5rem" h="3rem" w="3rem">
                     <Text variant="subtitle">{member.name.replace(/[^A-Z]/g, '')}</Text>
                   </Box>
-                  <Box flex ml={3}>
+                  <Box flex ml={4}>
                     <Text bold>{member.name}</Text>
                     <Text color="text.secondary" variant="secondary">
                       {member.role}
@@ -100,12 +99,12 @@ export default function Home() {
         </Box>
       </Grid>
 
-      <Card flex bg="primary" mt={6}>
+      <Card flex bg="primary" mt={4}>
         <Text bold variant="subtitle">
           Subscriptions Chart
         </Text>
 
-        <Box noWrap row alignItems="end" h="100%" justifyContent="evenly" minh={240} py={3}>
+        <Box noWrap row alignItems="end" h="100%" justifyContent="evenly" minh={240} py={4}>
           {Array.from({ length: 12 }).map((_, index) => {
             const percent = Math.round(Math.random() * (100 - 20) + 20);
 

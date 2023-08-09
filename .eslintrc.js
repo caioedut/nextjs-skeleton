@@ -1,7 +1,35 @@
 module.exports = {
-  extends: ['next', 'prettier', 'plugin:perfectionist/recommended-natural'],
+  env: {
+    browser: true,
+    node: true,
+  },
+
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
+    'plugin:perfectionist/recommended-natural',
+    'prettier',
+  ],
+
+  parser: '@typescript-eslint/parser',
+
+  plugins: ['@typescript-eslint'],
 
   rules: {
+    '@typescript-eslint/ban-ts-comment': 'off',
+
+    '@typescript-eslint/no-explicit-any': 'off',
+
+    '@typescript-eslint/no-unused-vars': 'warn',
+
+    'import/order': 'off',
+
+    'no-empty': ['error', { allowEmptyCatch: true }],
+
+    'node/handle-callback-err': 'off',
+
     'perfectionist/sort-imports': [
       'error',
       {
@@ -13,6 +41,8 @@ module.exports = {
           'type',
           'react',
           ['builtin', 'external'],
+          'internal-type',
+          'internal',
           ['parent-type', 'sibling-type', 'index-type'],
           ['parent', 'sibling', 'index'],
           'side-effect',
@@ -20,9 +50,12 @@ module.exports = {
           'object',
           'unknown',
         ],
-        'read-tsconfig': true,
+        'internal-pattern': ['@/**'],
+        'newlines-between': 'always',
+        'read-tsconfig': false,
       },
     ],
+
     'perfectionist/sort-jsx-props': [
       'error',
       {
@@ -31,11 +64,26 @@ module.exports = {
         shorthand: 'first',
       },
     ],
+
     'perfectionist/sort-objects': [
       'error',
       {
         'always-on-top': ['id', 'name', 'title', 'label'],
       },
     ],
+
+    radix: ['warn', 'as-needed'],
+
+    'react/jsx-no-target-blank': 'off',
+
+    'react/jsx-uses-react': 'off',
+
+    'react/react-in-jsx-scope': 'off',
+  },
+
+  settings: {
+    react: {
+      version: 'detect',
+    },
   },
 };
