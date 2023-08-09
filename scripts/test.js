@@ -1,6 +1,6 @@
 import pmex from 'pmex';
 
-import './config';
+import 'dotenv-auto';
 
 pmex(`prettier "{app,src,scripts,test}/**/*.{js,jsx,ts,tsx}" --check`);
 

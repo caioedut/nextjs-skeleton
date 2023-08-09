@@ -1,5 +1,5 @@
 import pmex from 'pmex';
 
-import './config';
+import 'dotenv-auto';
 
 pmex(`next start --port ${process.env.PORT}`);

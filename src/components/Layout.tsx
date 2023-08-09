@@ -19,7 +19,7 @@ export default function Layout({ children }: { children: ReactElement }) {
         <Box bg="background.disabled" borderBottom="1px solid background.primary" p={4}>
           <Text numberOfLines={1} variant="subtitle">
             {/*@ts-expect-error*/}
-            {theme?.head?.title ?? ' '}
+            {theme?.head?.title ?? <>&#10240;</>}
           </Text>
         </Box>
         <Scrollable bg="background.secondary" contentInset={4}>

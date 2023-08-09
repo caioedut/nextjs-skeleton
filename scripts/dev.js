@@ -1,6 +1,6 @@
 import pmex from 'pmex';
 
-import './config';
+import 'dotenv-auto';
 
 pmex({
   npm: `install && npm prune`,
